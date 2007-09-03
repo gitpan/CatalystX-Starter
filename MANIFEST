@@ -1,5 +1,6 @@
 .gitignore
 bin/catalystx-starter
+Changes
 data/Changes
 data/gitignore
 data/Makefile.PL
@@ -29,6 +30,7 @@ Makefile.PL
 MANIFEST			This list of files
 MANIFEST.SKIP
 META.yml
+README
 t/00-load.t
 t/copy.t
 t/dist-name.t
