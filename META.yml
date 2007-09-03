@@ -1,0 +1,31 @@
+--- 
+abstract: bootstrap a CPAN-able Catalyst component
+author: Jonathan Rockway C<< <jrockway@cpan.org> >>.
+build_requires: 
+  Directory::Scratch: 0
+  ExtUtils::MakeMaker: 6.11
+  File::pushd: 0
+  Test::Exception: 0
+  Test::TableDriven: 0
+distribution_type: module
+generated_by: Module::Install version 0.67
+license: perl
+meta-spec: 
+  url: http://module-build.sourceforge.net/META-spec-v1.3.html
+  version: 1.3
+name: CatalystX-Starter
+no_index: 
+  directory: 
+    - inc
+    - t
+requires: 
+  Catalyst::Devel: 0
+  Catalyst::Runtime: 0
+  File::Copy::Recursive: 0
+  File::ShareDir: 0
+  File::Slurp: 0
+  Test::More: 0
+  Test::Pod: 0
+  Test::Pod::Coverage: 0
+  ok: 0
+version: 0.01
