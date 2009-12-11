@@ -1,26 +1,30 @@
-use inc::Module::Install;
+use strict;
+use warnings;
+use inc::Module::Install 0.91;
 
 name('CatalystX-Starter');
 all_from('lib/CatalystX/Starter.pm');
 
-requires 'Catalyst::Runtime';
+requires 'Moose';
+requires 'namespace::autoclean';
+requires 'Catalyst::Runtime' => '5.80015';
 requires 'Catalyst::Devel';
-requires 'Test::More';
-requires 'ok';
-requires 'Test::Pod';
-requires 'Test::Pod::Coverage';
+requires 'Test::More' => '0.88';
+requires 'Test::Pod' => '1.14';
+requires 'Test::Pod::Coverage' => '1.04';
 requires 'File::ShareDir';
 requires 'File::Copy::Recursive';
 requires 'File::Slurp';
-build_requires 'File::pushd';
 
+build_requires 'File::pushd';
 build_requires 'Directory::Scratch';
 build_requires 'Test::TableDriven';
 build_requires 'Test::Exception';
 
 install_script('bin/catalystx-starter');
-install_share('data');
 
-no_index directory => 'data';
+resources repository => 'git://github.com/bobtfish/catalystx-starter.git';
+
+no_index directory => 'lib/auto';
 
 WriteAll();

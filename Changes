@@ -1,3 +1,16 @@
+0.06    Fri Dec 11 01:16:00 GMT 2009
+        - Significant updates to generated skeleton to use new features.
+          - Makefile.PL requires a reasonable version of Module::Install with
+            working auto_install
+          - Generated TestApp uses Catalyst 5.80
+          - Generated scripts for TestApp use Catalyst::ScriptRunner
+          - Generated compontent uses Moose and namespace::autoclean
+          - Pod tests generated moved to t/author
+          - M::I::AuthorRequires and M::I::AuthorTests used to run Pod tests.
+
+        - Moved application skeleton into the lib/auto directory so that
+          Module::Install's shonky install_share isn't used.
+
 0.05    Sun Dec 23 02:22:00 CST 2007
         - cleanup the generated Makefile.PL
 

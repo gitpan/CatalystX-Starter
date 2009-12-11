@@ -4,7 +4,7 @@ package CatalystX::Starter;
 use strict;
 use warnings;
 
-our $VERSION = '0.05';
+our $VERSION = '0.06';
 
 use File::ShareDir qw/module_dir/;
 use File::Copy::Recursive qw/dircopy/;
@@ -19,6 +19,8 @@ sub _boilerplate {
 
 sub _module2dist {
     my $module = shift;
+    die("You seem to have passed a dist name, not a module name: $module\n")
+        unless $module =~ /::/;
     $module =~ s/::/-/g;
     return $module;
 }
@@ -87,16 +89,31 @@ sub _mk_module {
     
     my $data = <<"MOD"; # indented to prevent pod parser from parsing it
  package $module;
- use strict;
- use warnings;
+ use Moose;
+ use namespace::autoclean;
+ 
+ 1;
  
  =head1 NAME
  
  $module - 
  
+ =head1 DESCRIPTION
+ 
+ =head1 METHODS
+ 
+ =head1 BUGS
+ 
+ =head1 AUTHOR
+ 
+ =head1 COPYRIGHT & LICENSE
+
+ Copyright 2009 the above author(s).
+ 
+ This sofware is free software, and is licensed under the same terms as perl itself.
+ 
  =cut
  
- 1;
 MOD
     
     $data =~ s/^ //mg; # cleanup the leading space
