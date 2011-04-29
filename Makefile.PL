@@ -25,6 +25,11 @@ install_script('bin/catalystx-starter');
 
 resources repository => 'git://github.com/bobtfish/catalystx-starter.git';
 
+if ($Module::Install::AUTHOR) {
+    system("pod2text lib/CatalystX/Starter.pm > README")
+        and die $!;
+}
+
 no_index directory => 'lib/auto';
 
 WriteAll();
